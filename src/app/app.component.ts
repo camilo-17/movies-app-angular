@@ -1,12 +1,9 @@
 import { Component } from '@angular/core';
 import { ThemeService } from './services/theme.service';
-import { importsStandAloneComponent } from './imports/main';
 import { movies } from './data/data';
 
 @Component({
     selector: 'app-root',
-    standalone: true,
-    imports: importsStandAloneComponent,
     templateUrl: './app.component.html',
     styleUrl: './app.component.less',
 })
