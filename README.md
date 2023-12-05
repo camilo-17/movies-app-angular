@@ -9,7 +9,6 @@ This project is a movie application built using the Angular framework and the Ng
 ### 1. Movie Listing
 
 -   Display a list of movies with essential details such as title, poster, and release date.
--   Implement pagination for easy navigation through a large collection of movies.
 
 ### 2. Movie Details
 
@@ -60,10 +59,3 @@ This project is a movie application built using the Angular framework and the Ng
 3. Use the search bar to find specific movies.
 4. Enjoy exploring and discovering new movies!
 
-## Contributing
-
-Contributions are welcome! If you'd like to contribute to this project, please follow the standard GitHub Fork and Pull Request workflow.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
