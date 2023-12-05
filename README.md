@@ -1,27 +1,69 @@
-# MoviesApp
+# Movie App Project with Angular and Ng-Zorro
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.5.
+## Overview
 
-## Development server
+This project is a movie application built using the Angular framework and the Ng-Zorro component library. The goal is to create a user-friendly and visually appealing platform for users to explore and discover information about movies.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Features
 
-## Code scaffolding
+### 1. Movie Listing
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+-   Display a list of movies with essential details such as title, poster, and release date.
+-   Implement pagination for easy navigation through a large collection of movies.
 
-## Build
+### 2. Movie Details
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+-   Allow users to click on a movie to view detailed information.
+-   Show additional details like synopsis, cast, and user ratings.
 
-## Running unit tests
+### 3. Search Functionality
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+-   Provide a search bar for users to quickly find movies based on keywords.
+-   Implement real-time search suggestions for a user-friendly experience.
 
-## Running end-to-end tests
+### 4. Responsive Design
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+-   Ensure a seamless experience across various devices with a responsive layout.
 
-## Further help
+## Tech Stack
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+-   **Angular:** The core framework for building the single-page application.
+-   **Ng-Zorro:** A set of high-quality UI components for Angular based on Ant Design.
+
+## Installation
+
+1. Clone the repository:
+
+    ```bash
+    git clone https://github.com/your-username/movie-app.git
+    cd movie-app
+    ```
+
+2. Install dependencies:
+
+    ```bash
+    npm install
+    ```
+
+3. Run the development server:
+
+    ```bash
+    ng serve
+    ```
+
+    Visit `http://localhost:4200/` in your browser.
+
+## How to Use
+
+1. Browse the list of movies on the home page.
+2. Click on a movie to view detailed information.
+3. Use the search bar to find specific movies.
+4. Enjoy exploring and discovering new movies!
+
+## Contributing
+
+Contributions are welcome! If you'd like to contribute to this project, please follow the standard GitHub Fork and Pull Request workflow.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.

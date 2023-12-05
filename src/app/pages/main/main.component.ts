@@ -5,6 +5,7 @@ import { MOVIES } from '../../data/data';
 import { LocalStorageService } from '../../services/local-storage.service';
 import { ThemeService } from '../../services/theme.service';
 import { Router } from '@angular/router';
+import { UtilsService } from '../../services/utils.service';
 
 @Component({
     selector: 'app-main',
@@ -62,11 +63,12 @@ export class MainComponent {
         },
     ];
 
-    hGutter = 20;
-    vGutter = 20;
-    count = 4;
-    // movies: any = movies;
-    constructor(private themeService: ThemeService, private localStorageService: LocalStorageService, private router: Router) {
+    constructor(
+        private themeService: ThemeService,
+        private localStorageService: LocalStorageService,
+        private router: Router,
+        private us: UtilsService
+    ) {
         themeService.loadTheme();
         this.cleanMovies = this.addWatchListMovies();
         this.movies = this.cleanMovies;
@@ -86,7 +88,8 @@ export class MainComponent {
         this.themeService.toggleTheme().then();
     }
 
-    saveMovieToWhatchList(movie: IMovie) {
+    saveMovieToWhatchList($event: Event, movie: IMovie) {
+        $event.stopPropagation();
         this.whatchListMoviesIds.push(movie.id);
         this.localStorageService.setWatchListMoviesIds(this.whatchListMoviesIds);
     }
@@ -113,9 +116,12 @@ export class MainComponent {
     }
 
     gotToDetailPage(movie: IMovie) {
-        console.log(movie);
-        // this.router.navigateByUrl(`detail-movie/${movie.id}`);
+        this.setProductInService();
         this.router.navigate(['/detail-movie', movie.id]);
+    }
+
+    setProductInService() {
+        this.us.setMovies(this.movies);
     }
 
     sortMovies(movies: IMovie[], indexSelected: number) {

@@ -1,1 +1,56 @@
-<p>detail-movie works!</p>
+<div class="container">
+    <div nz-row class="row-container">
+        <div class="img-container" nz-col nzXs="24" nzSm="24" nzMd="24" nzLg="11" nzXl="10">
+            <img class="img-movie" [src]="selectedMovie.imgSrc" alt="" />
+        </div>
+        <div nz-col nzXs="24" nzSm="24" nzMd="24" nzLg="13" nzXl="14">
+            <nz-card class="card-detail" [nzBordered]="false" [nzTitle]="cardtitle" [nzExtra]="extraTemplate">
+                <p class="heading"></p>
+                <p style="font-size: 1.2pc">{{ selectedMovie.description }}</p>
+                <p>{{ selectedMovie.duration }}</p>
+                <p>{{ selectedMovie.releasedDate }}</p>
+                <p><nz-rate [ngModel]="selectedMovie.rating / 2" [nzCount]="5" nzDisabled></nz-rate></p>
+                <p>{{ selectedMovie.genre.join(', ') }}</p>
+                <p>
+                    <button class="whatch-list-button" nz-button nzType="primary" nzSize="large" (click)="toogleWatchList()">
+                        {{ moviesInWhatchList.includes(selectedMovie.id) ? 'Remove from watchlist' : 'Add to watchlist' }}
+                        <span nz-icon nzType="eye"></span>
+                    </button>
+                </p>
+            </nz-card>
+        </div>
+    </div>
+    <div nz-row style="margin-top: 10px">
+        <div nz-col nzSpan="24">
+            <iframe
+                id="ytplayer"
+                type="text/html"
+                width="100%"
+                height="500px"
+                [src]="trailerLinkSafe"
+                title="YouTube video player"
+                frameborder="0"
+                allow="autoplay"
+            >
+            </iframe>
+        </div>
+    </div>
+    <div nz-row>
+        <app-comments></app-comments>
+    </div>
+</div>
+
+<ng-template #cardtitle>
+    <div class="title-and-arrow-container">
+        <div class="back-button" (click)="backTolist()">
+            <span nz-icon nzType="arrow-left" nzTheme="outline"></span>
+        </div>
+        <h1>{{ selectedMovie.title }}</h1>
+    </div>
+</ng-template>
+
+<ng-template #extraTemplate>
+    <div class="rating-circle">
+        {{ selectedMovie.rating }}
+    </div>
+</ng-template>

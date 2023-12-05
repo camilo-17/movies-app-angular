@@ -10,7 +10,7 @@ export const MOVIES: IMovie[] = [
         duration: '2h 30min',
         genre: ['Action', 'Sci-Fi'],
         releasedDate: '3 September 2020',
-        trailerLink: 'https://www.youtube.com/watch?v=LdOM0x0XDMo',
+        trailerLink: 'https://www.youtube.com/embed/LdOM0x0XDMo?si=oN5q65ykfoqDE1iV&amp;controls=0',
         imgSrc: '../assets/movies-images/Tenet.png',
     },
     {
@@ -22,7 +22,7 @@ export const MOVIES: IMovie[] = [
         duration: '1h 57min',
         genre: ['Action', 'Animation', 'Adventure'],
         releasedDate: '14 December 2018',
-        trailerLink: 'https://www.youtube.com/watch?v=tg52up16eq0',
+        trailerLink: 'https://www.youtube.com/embed/tg52up16eq0?si=_dzOs08ZwDSw6LR6&amp;controls=0',
         imgSrc: '../assets/movies-images/Spider Man.png',
     },
     {
@@ -33,7 +33,7 @@ export const MOVIES: IMovie[] = [
         duration: '2h 10min',
         genre: ['Comedy', 'Crime', 'Drama'],
         releasedDate: '27 November 2019',
-        trailerLink: 'https://www.youtube.com/watch?v=qGqiHJTsRkQ',
+        trailerLink: 'https://www.youtube.com/embed/qGqiHJTsRkQ?si=xAC5yrJXPD9_BQ87&amp;controls=0',
         imgSrc: '../assets/movies-images/Knives Out.png',
     },
     {
@@ -44,7 +44,7 @@ export const MOVIES: IMovie[] = [
         duration: '2h 1min',
         genre: ['Action', 'Adventure', 'Comedy'],
         releasedDate: '1 August 2014',
-        trailerLink: 'https://www.youtube.com/watch?v=d96cjJhvlMA',
+        trailerLink: 'https://www.youtube.com/embed/d96cjJhvlMA?si=BnMtHe50Pqs-7SGc&amp;controls=0',
         imgSrc: '../assets/movies-images/Guardians of The Galaxy.png',
     },
     {
@@ -56,7 +56,7 @@ export const MOVIES: IMovie[] = [
         duration: '2h 21min',
         genre: ['Action', 'Adventure', 'Sci-Fi'],
         releasedDate: '1 May 2015',
-        trailerLink: 'https://www.youtube.com/watch?v=tmeOjFno6Do',
+        trailerLink: 'https://www.youtube.com/embed/tmeOjFno6Do?si=VDPBpHd37Wt2PTMf&amp;controls=0',
         imgSrc: '../assets/movies-images/Avengers.png',
     },
 ];
