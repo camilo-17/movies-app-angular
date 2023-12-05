@@ -1,5 +1,8 @@
-export const movies = [
+import { IMovie } from '../interfaces/movie';
+
+export const MOVIES: IMovie[] = [
     {
+        id: 1,
         title: 'Tenet',
         description:
             'Armed with only one word, Tenet, and fighting for the survival of the entire world, a Protagonist journeys through a twilight world of international espionage on a mission that will unfold in something beyond real time.',
@@ -11,6 +14,7 @@ export const movies = [
         imgSrc: '../assets/movies-images/Tenet.png',
     },
     {
+        id: 2,
         title: 'Spider-Man: Into the Spider-Verse',
         description:
             'Teen Miles Morales becomes the Spider-Man of his universe, and must join with five spider-powered individuals from other dimensions to stop a threat for all realities.',
@@ -22,6 +26,7 @@ export const movies = [
         imgSrc: '../assets/movies-images/Spider Man.png',
     },
     {
+        id: 3,
         title: 'Knives Out',
         description: 'A detective investigates the death of a patriarch of an eccentric, combative family.',
         rating: 7.9,
@@ -32,6 +37,7 @@ export const movies = [
         imgSrc: '../assets/movies-images/Knives Out.png',
     },
     {
+        id: 4,
         title: 'Guardians of the Galaxy',
         description: 'A group of intergalactic criminals must pull together to stop a fanatical warrior with plans to purge the universe.',
         rating: 8.0,
@@ -42,6 +48,7 @@ export const movies = [
         imgSrc: '../assets/movies-images/Guardians of The Galaxy.png',
     },
     {
+        id: 5,
         title: 'Avengers: Age of Ultron',
         description:
             "When Tony Stark and Bruce Banner try to jump-start a dormant peacekeeping program called Ultron, things go horribly wrong and it's up to Earth's mightiest heroes to stop the villainous Ultron from enacting his terrible plan.",

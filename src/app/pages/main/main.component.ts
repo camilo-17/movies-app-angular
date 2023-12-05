@@ -1,16 +1,17 @@
-import { Component, OnInit } from '@angular/core';
-import { ThemeService } from './services/theme.service';
-import { MOVIES } from './data/data';
-import { IOrder } from './interfaces/order';
-import { IMovie } from './interfaces/movie';
-import { LocalStorageService } from './services/local-storage.service';
+import { Component } from '@angular/core';
+import { IMovie } from '../../interfaces/movie';
+import { IOrder } from '../../interfaces/order';
+import { MOVIES } from '../../data/data';
+import { LocalStorageService } from '../../services/local-storage.service';
+import { ThemeService } from '../../services/theme.service';
+import { Router } from '@angular/router';
 
 @Component({
-    selector: 'app-root',
-    templateUrl: './app.component.html',
-    styleUrl: './app.component.less',
+    selector: 'app-main',
+    templateUrl: './main.component.html',
+    styleUrl: './main.component.less',
 })
-export class AppComponent implements OnInit {
+export class MainComponent {
     selectedOrder?: Event;
     movies: IMovie[] = [];
     cleanMovies: IMovie[] = [];
@@ -65,7 +66,7 @@ export class AppComponent implements OnInit {
     vGutter = 20;
     count = 4;
     // movies: any = movies;
-    constructor(private themeService: ThemeService, private localStorageService: LocalStorageService) {
+    constructor(private themeService: ThemeService, private localStorageService: LocalStorageService, private router: Router) {
         themeService.loadTheme();
         this.cleanMovies = this.addWatchListMovies();
         this.movies = this.cleanMovies;
@@ -109,6 +110,12 @@ export class AppComponent implements OnInit {
         }
         this.showBanner = false;
         this.movies = this.cleanMovies.filter((movie) => movie.title.toLowerCase().includes(word.toLowerCase()));
+    }
+
+    gotToDetailPage(movie: IMovie) {
+        console.log(movie);
+        // this.router.navigateByUrl(`detail-movie/${movie.id}`);
+        this.router.navigate(['/detail-movie', movie.id]);
     }
 
     sortMovies(movies: IMovie[], indexSelected: number) {

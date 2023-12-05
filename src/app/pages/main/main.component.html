@@ -1,0 +1,79 @@
+<div class="container">
+    <div nz-row nzJustify="space-between">
+        <div nz-col nzXs="21" nzSm="21" nzMd="21" nzLg="21" nzXl="10">
+            <div nz-row nzJustify="space-between">
+                <div nz-col nzXs="6" nzSm="6" nzMd="6" nzLg="6" nzXl="6">
+                    <h2 class="branch-name"><span class="branch-title">QST</span> movies</h2>
+                </div>
+                <div nz-col nzXs="18" nzSm="18" nzMd="18" nzLg="18" nzXl="18">
+                    <nz-input-group nzDanger [nzSuffix]="suffixIconSearch">
+                        <input
+                            name="search-input"
+                            (ngModelChange)="onChangeSearchInput($event)"
+                            [(ngModel)]="freeSeach"
+                            type="text"
+                            nz-input
+                            placeholder="input search text"
+                        />
+                    </nz-input-group>
+                    <ng-template #suffixIconSearch>
+                        <span nz-icon nzType="search"></span>
+                    </ng-template>
+                </div>
+            </div>
+        </div>
+        <div nz-col nzXs="2" nzSm="2" nzMd="2" nzLg="2" nzXl="2">
+            <button nz-button nzType="primary" nzDanger nzShape="circle" (click)="toggleTheme()">
+                <span nz-icon nzType="alert" nzTheme="outline"></span>
+            </button>
+        </div>
+    </div>
+    <div nz-row *ngIf="showBanner">
+        <nz-carousel nzAutoPlay>
+            <div nz-carousel-content *ngFor="let movieSrc of moviesHero">
+                <div class="fill">
+                    <img [src]="movieSrc.source" alt="" />
+                    <h1 class="hero-text-title">{{ movieSrc.title }}</h1>
+                    <div class="text-block">
+                        {{ movieSrc.description }}
+                    </div>
+                </div>
+            </div>
+        </nz-carousel>
+    </div>
+
+    <div nz-row nzJustify="end" class="filter-row mt-20">
+        <a nz-dropdown [nzPlacement]="'bottomRight'" [nzDropdownMenu]="menu">
+            {{ elementSelected() }}
+            <span nz-icon nzType="down"></span>
+        </a>
+        <nz-dropdown-menu #menu="nzDropdownMenu">
+            <ul *ngFor="let order of orders; index as i" nz-menu nzSelectable>
+                <li nz-menu-item (click)="handleOrderChanged(i)">{{ order.display }}</li>
+            </ul>
+        </nz-dropdown-menu>
+    </div>
+
+    <div class="movies">
+        <div class="movie" *ngFor="let movie of movies">
+            <div class="movies-image-container" (click)="gotToDetailPage(movie)">
+                <div class="on-my-whatch-list" *ngIf="whatchListMoviesIds.includes(movie.id)">
+                    On my watchlist
+                    <span nz-icon nzType="heart" nzTheme="twotone"></span>
+                </div>
+                <img [src]="movie.imgSrc" alt="" />
+                <button
+                    *ngIf="!whatchListMoviesIds.includes(movie.id)"
+                    class="whatch-list-button"
+                    nz-button
+                    nzType="primary"
+                    nzSize="large"
+                    (click)="saveMovieToWhatchList(movie)"
+                >
+                    Add to watchlist
+                    <span nz-icon nzType="eye"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -12,9 +12,13 @@ import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzSpaceModule } from 'ng-zorro-antd/space';
 import { NzCarouselModule } from 'ng-zorro-antd/carousel';
 import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
+import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
+import { MainComponent } from './pages/main/main.component';
 
 @NgModule({
-    declarations: [AppComponent],
+    declarations: [AppComponent, MainComponent],
     imports: [
         BrowserModule,
         AppRoutingModule,
@@ -22,9 +26,12 @@ import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
         NzLayoutModule,
         NzButtonModule,
         NzIconModule,
+        BrowserAnimationsModule,
+        HttpClientModule,
         NzInputModule,
         NzGridModule,
         NzSpaceModule,
+        FormsModule,
         NzDropDownModule,
     ],
     providers: [],
